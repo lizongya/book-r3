@@ -65,11 +65,11 @@ df4
 
 library(PerformanceAnalytics)
 df110030<-read.csv(file="110030.csv",header=TRUE)
-x110030<-xts(df110030[,c('收盘价','转股价值')],order.by = as.Date(as.character(df110030$����),format='%Y-%m-%d'))
+x110030<-xts(df110030[,c('收盘价','转股价值')],order.by = as.Date(as.character(df110030$date),format='%Y-%m-%d'))
 x110030<-na.omit(x110030)
 names(x110030)<-c('close','value')
 
-df600185<-read.csv(file="600185-2.csv",header=TRUE)
+df600185<-read.csv(file="600185-2.csv",header=TRUE,encoding="UTF-8")
 x600185<-xts(df600185$close,order.by = as.Date(as.character(df600185$date),format='%Y-%m-%d'))
 names(x600185)<-'stock'
 x110030<-merge(x110030,x600185,all = FALSE)
