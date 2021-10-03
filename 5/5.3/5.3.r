@@ -65,7 +65,7 @@ df4
 
 library(PerformanceAnalytics)
 df110030<-read.csv(file="110030.csv",header=TRUE)
-x110030<-xts(df110030[,c('收盘价','转股价值')],order.by = as.Date(as.character(df110030$����),format='%Y-%m-%d'))
+x110030<-xts(df110030[,c('收盘价','转股价值')],order.by = as.Date(as.character(df110030$date),format='%Y-%m-%d'))
 x110030<-na.omit(x110030)
 names(x110030)<-c('close','value')
 
