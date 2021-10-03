@@ -42,7 +42,7 @@ head(dfc)
 
 library(plyr)
 library(reshape2)
-r1<-reshape(g1, idvar=c("term","risk"),timevar = "type",direction = "wide")
+r1<-reshape(g1, idvar=c("term","risk"),timevar = "type",direction = "weight")
 names(r1)<-c("term","risk","alter","cash","fixed","stock")
 r1<-data.frame(na.fill(r1,0))
 
